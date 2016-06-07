@@ -1,0 +1,5 @@
+alias la='ls -lAh'
+alias ll='ls -lh'
+alias ls='ls --color=tty'
+
+export test='{{myVarTest}}'
