@@ -1,0 +1,2 @@
+- name: Add bashrc docker chunk
+  template: src=bashrc-docker dest="{{ folder.chunks }}/docker"
