@@ -1,0 +1,12 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  vars:
+    folder:
+      chunks: '~/chunks'
+  roles:
+    - { role: myBash }
+    - { role: git }
+    - { role: docker }
+    - { role: atom }
+    - { role: java }

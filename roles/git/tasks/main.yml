@@ -1,0 +1,5 @@
+- name: Install GIT packages
+  apt: name=git state=latest
+
+- name: Add bashrc Git chunk
+  template: src=bashrc-git dest="{{ folder.chunks }}/git"

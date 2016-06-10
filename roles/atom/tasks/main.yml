@@ -1,0 +1,9 @@
+- name: Install Atom packages
+  apt: name=atom state=latest
+
+- name: Install Atom Plugins
+  shell: apm install {{ item }}
+  with_items:
+    - eclipse-keybindings
+    - asciidoc-preview
+    - language-groovy

@@ -6,4 +6,6 @@
       chunks: '~/chunks'
   roles:
     - { role: myBash }
+    - { role: git }
     - { role: docker }
+    - { role: java }
