@@ -1,0 +1,2 @@
+- name: Install I3WM packages
+  apt: name=i3 state=latest

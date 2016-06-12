@@ -5,5 +5,11 @@
   shell: apm install {{ item }}
   with_items:
     - eclipse-keybindings
+    - langage-asciidoc
     - asciidoc-preview
     - language-groovy
+    - atom-beautify
+    - atom-typescript
+    - pigments
+    - color-picker
+    - sass-autocompile

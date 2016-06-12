@@ -1,6 +1,5 @@
 ---
-- hosts: 127.0.0.1
-  connection: local
+- hosts: vps-ovh
   vars:
     folder:
       chunks: '~/chunks'
@@ -9,3 +8,4 @@
     - { role: git }
     - { role: docker }
     - { role: java }
+    - { role: maven }

@@ -10,3 +10,4 @@
     - { role: docker }
     - { role: atom }
     - { role: java }
+    - { role: maven }

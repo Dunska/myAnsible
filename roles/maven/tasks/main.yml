@@ -1,0 +1,5 @@
+- name: Install Maven packages
+  apt: name=maven state=latest
+
+- name: Add bashrc maven chunk
+  template: src=bashrc-maven dest="{{ folder.chunks }}/maven"
