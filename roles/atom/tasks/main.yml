@@ -4,12 +4,15 @@
 - name: Install Atom Plugins
   shell: apm install {{ item }}
   with_items:
-    - eclipse-keybindings
-    - langage-asciidoc
     - asciidoc-preview
-    - language-groovy
     - atom-beautify
     - atom-typescript
-    - pigments
     - color-picker
+    - eclipse-keybindings
+    - file-icons
+    - language-asciidoc
+    - language-docker
+    - language-groovy
+    - linter
+    - pigments
     - sass-autocompile
