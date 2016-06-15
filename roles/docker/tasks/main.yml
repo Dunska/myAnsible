@@ -1,2 +1,20 @@
+- name: Update repositories
+  apt: update_cache=yes
+
+- name: Install docker prerequites
+  apt: name={{ item }} state=latest
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+
+- name: Add the GPG key for the official Docker repository
+  apt_key: keyserver=hkp://p80.pool.sks-keyservers.net:80 id=58118E89F3A912897C070ADBF76221572C52609D state=present
+
+- name: Add Docker repositoty
+  apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-xenial main' state=present filename='docker.list'
+
+- name: Install Docker packages
+  apt: name=docker-engine state=latest
+
 - name: Add bashrc docker chunk
   template: src=bashrc-docker dest="{{ folder.chunks }}/docker"

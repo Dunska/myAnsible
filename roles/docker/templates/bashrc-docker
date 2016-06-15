@@ -1,5 +1,3 @@
-############ >>>DOCKER
-
 alias d='docker'
 alias dl='docker ps -l -q'
 alias dm='docker-machine'
@@ -12,5 +10,3 @@ function docker_clean_orphan_volumes() {
    docker run -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker:/var/lib/docker --rm martin/docker-cleanup-volumes $@
 }
 alias dclean-orphan-volumes=docker_clean_orphan_volumes
-
-############ <<<DOCKER
