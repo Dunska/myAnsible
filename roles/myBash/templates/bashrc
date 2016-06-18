@@ -2,12 +2,6 @@ alias la='ls -lAh'
 alias ll='ls -lh'
 alias ls='ls --color=tty'
 
-export test='{{myVarTest}}'
-
-
-# TODO Ansible ansible :p
-source ~/gitRepo/ansible/hacking/env-setup
-
 # Source all files in chunks folder
 BASH_CHUNKS_FOLDER={{folder.chunks}}
 if [ -d $BASH_CHUNKS_FOLDER ]; then

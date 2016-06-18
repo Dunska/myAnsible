@@ -5,6 +5,7 @@ alias dc='docker-compose'
 alias dclean-all-exited-containers='docker ps -aq --filter 'status=exited' | xargs --no-run-if-empty docker rm --volumes=true'
 alias dclean-old-containers="docker ps -a --filter 'status=exited' | grep 'days ago' | awk '{print $1}' | xargs --no-run-if-empty docker rm --volumes=true"
 alias dclean-dangling-images='docker images --filter dangling=true --quiet | xargs --no-run-if-empty docker rmi'
+alias dclean-untagged='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
 
 function docker_clean_orphan_volumes() {
    docker run -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker:/var/lib/docker --rm martin/docker-cleanup-volumes $@

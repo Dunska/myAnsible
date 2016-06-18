@@ -16,5 +16,12 @@
 - name: Install Docker packages
   apt: name=docker-engine state=latest
 
+- name: Create a docker group
+  group: name=docker state=present
+
+- name: Add the current user to the docker group
+  become: yes
+  user: name=kevin groups=docker append=yes
+
 - name: Add bashrc docker chunk
   template: src=bashrc-docker dest="{{ folder.chunks }}/docker"
