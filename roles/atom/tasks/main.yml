@@ -1,18 +1,17 @@
 - name: Install Atom packages
   apt: name=atom state=latest
 
-# - name: Install Atom Plugins
-  # shell: apm install {{ item }}
-  # with_items:
-    # - asciidoc-preview
-    # - atom-beautify
-    # - atom-typescript
-    # - color-picker
-    # - eclipse-keybindings
-    # - file-icons
-    # - language-asciidoc
-    # - language-docker
-    # - language-groovy
-    # - linter
-    # - pigments
-    # - sass-autocompile
+- name: Install Atom Plugins
+  apm-package: name="{{ item }}" upgrade="true"
+  with_items:
+    - asciidoc-preview
+    - atom-typescript
+    - color-picker
+    - eclipse-keybindings
+    - file-icons
+    - language-asciidoc
+    - language-docker
+    - language-groovy
+    - linter
+    - pigments
+    - sass-autocompile

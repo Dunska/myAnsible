@@ -11,10 +11,17 @@
   apt_key: keyserver=hkp://p80.pool.sks-keyservers.net:80 id=58118E89F3A912897C070ADBF76221572C52609D state=present
 
 - name: Add Docker repositoty
-  apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-xenial main' state=present filename='docker.list'
+  apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-xenial main' state=present
+
+- name: Add Docker repositoty
+  apt_repository: repo='deb https://get.docker.io/ubuntu docker main' state=present
+
 
 - name: Install Docker packages
   apt: name=docker-engine state=latest
+
+- name: Install Docker-Compose packages
+  apt: name=docker-compose state=latest
 
 - name: Create a docker group
   group: name=docker state=present
