@@ -1,6 +1,9 @@
 - name: Install Atom packages
   apt: name=atom state=latest
 
+- name: Add bashrc atom chunk
+  template: src=bashrc-atom dest="{{ folder.chunks }}/atom"
+
 - name: Install Atom Plugins
   apm-package: name="{{ item }}" upgrade="true"
   with_items:

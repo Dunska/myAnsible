@@ -2,6 +2,9 @@ alias la='ls -lAh'
 alias ll='ls -lh'
 alias ls='ls --color=tty'
 
+alias dodo='shutdown -h now'
+alias reboot='shutdown -r now'
+
 # Source all files in chunks folder
 BASH_CHUNKS_FOLDER={{folder.chunks}}
 if [ -d $BASH_CHUNKS_FOLDER ]; then
